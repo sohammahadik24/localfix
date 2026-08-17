@@ -1,0 +1,87 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   src/index.css
+   
+   WHAT THIS FILE DOES:
+   This is the GLOBAL stylesheet. Every page and component in the app inherits
+   these styles. We set:
+   1. A Google Font (Inter) for modern, clean typography
+   2. CSS variables (--primary, --dark, etc.) so we use consistent colors everywhere
+   3. Basic body/html resets so the app starts from a clean slate
+   
+   We import Bootstrap Icons CDN here so we can use icons like bi-droplet-fill
+   throughout the app with a simple <i className="bi bi-droplet-fill"> tag.
+────────────────────────────────────────────────────────────────────────────── */
+
+/* Google Font: Inter — a clean, professional sans-serif font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+/* Bootstrap Icons — gives us 1800+ icons as CSS classes */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+/* ── CSS Variables ────────────────────────────────────────────────────────────
+   CSS variables (custom properties) let us define a color once and reuse it
+   everywhere. If we ever change the brand color, we change it in ONE place.
+   :root means "apply these to the entire document".
+────────────────────────────────────────────────────────────────────────────── */
+:root {
+  --primary:    #2563EB;   /* LocalFix brand blue */
+  --primary-dark: #1D4ED8; /* darker blue for hover states */
+  --dark:       #111827;   /* near-black for headings */
+  --bg:         #F8FAFC;   /* very light grey background */
+  --white:      #FFFFFF;
+  --text:       #1F2937;   /* main body text */
+  --muted:      #6B7280;   /* secondary/caption text */
+  --success:    #16A34A;   /* green for positive indicators */
+  --border:     #E5E7EB;   /* subtle border color */
+  --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+/* ── Global Reset ────────────────────────────────────────────────────────────
+   box-sizing: border-box means padding and border are INCLUDED in the element's
+   total width/height. This prevents unexpected layout overflow.
+────────────────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* smooth scroll when clicking anchor links */
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* makes text look crisper on macOS */
+}
+
+/* ── Utility: section spacing ───────────────────────────────────────────────
+   We'll add this class to every major section so spacing is consistent.
+────────────────────────────────────────────────────────────────────────────── */
+.section-pad {
+  padding: 80px 0;
+}
+
+/* ── Headings ────────────────────────────────────────────────────────────────
+   Override Bootstrap's heading color so all h1–h4 use our dark variable.
+────────────────────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dark);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* ── Links ───────────────────────────────────────────────────────────────────
+   Remove underlines from links by default (Bootstrap usually handles this
+   but we reinforce it here).
+────────────────────────────────────────────────────────────────────────────── */
+a {
+  text-decoration: none;
+  color: inherit;
+}

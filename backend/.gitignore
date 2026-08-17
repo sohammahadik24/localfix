@@ -1,0 +1,27 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# backend/.gitignore
+#
+# WHY DO WE NEED THIS FILE?
+#   Git tracks all files in your project by default.
+#   However, some files should NEVER be uploaded or shared on GitHub:
+#
+#   1. node_modules/ → Contains thousands of downloaded library files.
+#                      Anyone who clones your repository can easily recreate
+#                      this folder by simply running 'npm install'.
+#
+#   2. .env          → Stores sensitive environment variables (such as secret keys,
+#                      database passwords, and port configurations).
+#                      Keeping it ignored prevents accidental security leaks.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Dependencies
+node_modules/
+
+# Environment Variables & Secrets
+.env
+.env.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
